@@ -1,0 +1,81 @@
+{
+  "date": "2026-11-20",
+  "timezone": "Asia/Shanghai",
+  "python": "3.12.14",
+  "torch": "2.5.1",
+  "device": "cpu",
+  "threads": 1,
+  "record_scope": "Previously recorded CPU synthetic workflow validation; rerun from the delivered source directory to verify the receiving environment.",
+  "tests": {
+    "passed": 61,
+    "duration_s": 19.8
+  },
+  "lint": "passed",
+  "format": "passed",
+  "independence": "Standalone installation, imports, and all three reconstruction methods were checked without requiring other code repositories.",
+  "optional_torch": "Discovery and synthetic simulation were checked without torch; neural reconstruction returns a dependency failure.",
+  "demo": {
+    "shape": [
+      16,
+      16
+    ],
+    "transducers": 12,
+    "records": [
+      {
+        "method": "dip",
+        "status": "budget_exhausted",
+        "stop_reason": "max_iterations",
+        "relative_data_residual": 0.6394156227068266,
+        "rmse_mps": 44.181955489664944,
+        "runtime_s": 11.313880848698318,
+        "work": {
+          "forward_calls": 61,
+          "adjoint_calls": 30,
+          "forward": 61,
+          "eikonal_solves": 744,
+          "adjoint": 30
+        }
+      },
+      {
+        "method": "inr",
+        "status": "budget_exhausted",
+        "stop_reason": "max_iterations",
+        "relative_data_residual": 0.45519011278102833,
+        "rmse_mps": 13.68319667967634,
+        "runtime_s": 8.912697918713093,
+        "work": {
+          "forward_calls": 61,
+          "adjoint_calls": 30,
+          "forward": 61,
+          "eikonal_solves": 744,
+          "adjoint": 30
+        }
+      },
+      {
+        "method": "dps",
+        "status": "budget_exhausted",
+        "stop_reason": "max_iterations",
+        "relative_data_residual": 1.899758027555767,
+        "rmse_mps": 24.622955788517352,
+        "runtime_s": 5.002126466482878,
+        "work": {
+          "forward_calls": 33,
+          "adjoint_calls": 16,
+          "forward": 33,
+          "eikonal_solves": 408,
+          "adjoint": 16
+        }
+      }
+    ],
+    "scope": "Same-model synthetic execution check only; not experimental validation or algorithm ranking."
+  },
+  "source_delivery_verification": {
+    "passed_tests": 62,
+    "duration_s": 19.84,
+    "method": "Copied the complete source folder to a new location; ran tests in Python isolated mode with external source-project imports blocked.",
+    "external_source_checkouts_required": false,
+    "symbolic_links_in_delivery": 0,
+    "distribution_archives_in_delivery": 0,
+    "resource_module_optional": true
+  }
+}

@@ -1,0 +1,1 @@
+"""Standalone PDE framework component."""

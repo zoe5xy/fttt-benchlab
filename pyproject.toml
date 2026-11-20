@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fttt-benchlab"
+version = "0.1.0"
+description = "First-arrival travel-time tomography with DIP, INR and DPS"
+readme = "README.md"
+license = {file = "LICENSE"}
+requires-python = ">=3.12"
+dependencies = [
+    "numpy>=1.26",
+    "scipy>=1.12",
+    "h5py>=3.8",
+    "pydantic>=2",
+    "PyYAML>=6",
+    "scikit-image>=0.21",
+]
+
+[project.optional-dependencies]
+neural = ["torch>=2.0"]
+performance = ["numba>=0.61"]
+viz = ["matplotlib>=3.7", "pillow>=10"]
+dev = ["pytest>=8", "build", "ruff>=0.6"]
+
+[project.scripts]
+fttt = "ftttbench.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["ftttbench*"]
+
+[tool.setuptools.package-data]
+ftttbench = ["_provenance/*.json", "_provenance/*.md", "_assets/weights/*/*.json", "_assets/weights/*/*.pt"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src", "."]
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F"]

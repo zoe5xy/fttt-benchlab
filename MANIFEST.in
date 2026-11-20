@@ -1,0 +1,9 @@
+include LICENSE THIRD_PARTY_NOTICES.md SOURCE.json
+include README.zh-CN.md
+recursive-include configs *.yaml
+recursive-include examples *.py *.md
+recursive-include docs *.md *.json *.txt
+recursive-include diffusion *.md *.json *.pt
+recursive-include tests *.py
+include environment.yml .gitignore
+include .github/workflows/tests.yml

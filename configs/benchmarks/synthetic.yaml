@@ -1,0 +1,16 @@
+name: synthetic_first_arrival
+case_glob: ../../data/*.h5
+algorithms:
+  - id: dip
+    name: dip
+    config: ../algorithms/fttt_dip.yaml
+  - id: inr
+    name: inr
+    config: ../algorithms/fttt_inr.yaml
+  - id: dps
+    name: dps
+    config: ../algorithms/fttt_dps.yaml
+host_limits:
+  max_iterations: 10
+outputs:
+  root: ../../runs

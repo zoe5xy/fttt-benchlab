@@ -1,0 +1,434 @@
+{
+  "schema_version": "fttt.sources.v1",
+  "project": "fttt-benchlab",
+  "delivery": "standalone_source_directory",
+  "required_source_checkouts": [],
+  "third_party_notices": "THIRD_PARTY_NOTICES.md",
+  "upstream_components": {
+    "repository": "https://github.com/peterw634/inv_framework",
+    "commit": "b258fa90d284f0105259aeffbfd43814f4cd3085",
+    "license_declaration": "Upstream README declares MIT; no separate LICENSE file was present in this revision. No additional copyright holder is inferred.",
+    "files": [
+      {
+        "path": "inv_framework/solvers/dip.py",
+        "blob_sha": "7d5e711f2f73d52be08815c3215259e359d1a0e6"
+      },
+      {
+        "path": "inv_framework/solvers/inr.py",
+        "blob_sha": "aedf9676ec0e79a8b39e9243f127582a444d5a1a"
+      },
+      {
+        "path": "inv_framework/solvers/diffusion/dps.py",
+        "blob_sha": "51ce23b3edf579b5af51030d8b8d4a1eaa4e293e"
+      },
+      {
+        "path": "inv_framework/solvers/diffusion/scheduler.py",
+        "blob_sha": "ee4445e5ff87e1c72d488a559600a515409a1607"
+      },
+      {
+        "path": "inv_framework/solvers/diffusion/conditioning.py",
+        "blob_sha": "42e9f828adcb202a54b06effbcb2701436fd6bf6"
+      },
+      {
+        "path": "inv_framework/models/skip_unet.py",
+        "blob_sha": "b7020ae4d6a876c0f38f642639aeb81b29ae4299"
+      },
+      {
+        "path": "inv_framework/models/siren.py",
+        "blob_sha": "19d7d841094582a3134d9632ac64fb62c4d7b3c4"
+      },
+      {
+        "path": "inv_framework/models/tiny_unet.py",
+        "blob_sha": "82192e76faa6073a4da049cc9c3b0cf525a843c9"
+      },
+      {
+        "path": "inv_framework/operators/base.py",
+        "blob_sha": "235970ff9b5110639015a5c514e2734eb2cb5be2"
+      },
+      {
+        "path": "inv_framework/operators/noise.py",
+        "blob_sha": "38bf7d2d3ab0a5cc0e11b0e4cfb2ef30fcc09fe3"
+      },
+      {
+        "path": "inv_framework/solvers/base.py",
+        "blob_sha": "acaa0e6bf0aac565e79eeb5b97d40e43e38ea14a"
+      }
+    ],
+    "local_changes": [
+      "Package initializers expose only the extracted subset.",
+      "DIP/INR/DPS add optional loss, observation and work-control hooks.",
+      "VPSchedule fixes the final clean step and rejects duplicate inference timesteps."
+    ]
+  },
+  "adaptations": [
+    "First-arrival-only case schema and optional pick confidence.",
+    "DIP, INR and DPS share the included Eikonal forward model and adjoint.",
+    "Configurations and example weights resolve inside this source directory."
+  ],
+  "files": [
+    {
+      "path": ".github/workflows/tests.yml",
+      "sha256": "adc12110af3b0ba8f78356098f99e779afe82e02d64d2d9efacb171898a8ac73"
+    },
+    {
+      "path": ".gitignore",
+      "sha256": "46b98c10f6840fd29c38f0e353f28bebd2048edec72c1bd62dafb235fa4d1bc2"
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "18932face5fafeed181b56442ab1b73d97cc849ab52b88dbcdb6ff29e67008b1"
+    },
+    {
+      "path": "MANIFEST.in",
+      "sha256": "4e0da1326aa7cc03defc5793c83854481349e911d311ec9db75654723e317c03"
+    },
+    {
+      "path": "README.md",
+      "sha256": "0285ec7787af0662f384b49d26978d07b289400888d9df3b232ff5fdb85d8473"
+    },
+    {
+      "path": "README.zh-CN.md",
+      "sha256": "90cf5a7d65dd22ed8e92d7bc76d377d30fe3ed9a0217cdca822f95e301dd3745"
+    },
+    {
+      "path": "THIRD_PARTY_NOTICES.md",
+      "sha256": "cfbf779a932bc8f3cebfc0da453fb94c6826256986d3c8bb7a4e8450ffc7cd77"
+    },
+    {
+      "path": "configs/algorithms/fttt_dip.yaml",
+      "sha256": "48206dd2e283283127353e5cf0dde9726ea7c805573160ea09a24dc2d5f03c91"
+    },
+    {
+      "path": "configs/algorithms/fttt_dps.yaml",
+      "sha256": "bf0daf1d78cc54cf16a909c4525f838e1b0d00b0a03755b3e3bcc5ffdac79fb5"
+    },
+    {
+      "path": "configs/algorithms/fttt_inr.yaml",
+      "sha256": "e96492eaa6fe061db61d22949c559e045c9e70e66007819007597cac16341763"
+    },
+    {
+      "path": "configs/benchmarks/synthetic.yaml",
+      "sha256": "faa46cdfcb62ddc029e54896d5cb1fe0438dbbd80b9f6cbdeb989d6c6d1deca2"
+    },
+    {
+      "path": "diffusion/README.md",
+      "sha256": "2ca2e7ca66e78053f28faa862a69f8951518f2116a3a45382c7a5d253da8cb9b"
+    },
+    {
+      "path": "diffusion/weights/nbpslice2d/manifest.json",
+      "sha256": "483c07d8ba163bb12e735a5f6ca8c0c3ada52dacc02334b1d4af2de7a2e50bda"
+    },
+    {
+      "path": "diffusion/weights/openbreastus/manifest.json",
+      "sha256": "5653367291bb211b23ac5abd7253ab196c5802ff31a8e68618d2ab7edf86fdc1"
+    },
+    {
+      "path": "diffusion/weights/synthetic_ellipses/manifest.json",
+      "sha256": "732ee47f66f7173b8ac8dcd29048dbe6f310653820888eda39570036bf6c080b"
+    },
+    {
+      "path": "diffusion/weights/synthetic_ellipses/reference.pt",
+      "sha256": "5f86fa62c41525d0879ee7c7ddd0b0b25d70707026f031ed6d2f4ce80814cf72"
+    },
+    {
+      "path": "diffusion/weights/synthetic_ellipses/reference.pt.json",
+      "sha256": "e8b72a87452bb67f2e839d37642212e7cd037af8414e7196c65bbdebfc9c4b6d"
+    },
+    {
+      "path": "docs/algorithm.md",
+      "sha256": "73342d987546b6b379643d9b610aaa8920896edbb9dfbb5bc8d490b6a2ab00c3"
+    },
+    {
+      "path": "docs/data_format.md",
+      "sha256": "9c4f0a9d06c47de119655bfdd3cc8875674ba04914fa2340a5bb95a3c80fdffc"
+    },
+    {
+      "path": "docs/development.md",
+      "sha256": "6bedcb133d671c73a9096a1a9f28aa07ef6a6faf590e5982378d251be00caa53"
+    },
+    {
+      "path": "docs/validation.json",
+      "sha256": "404a486d9cef44839a5c251b320df8c3a0959c61f9502ac19d451e6058d26dbf"
+    },
+    {
+      "path": "docs/validation.md",
+      "sha256": "63d9d19f303e1231cc6d63aa0d82d8dd841bb6c526086b01cb53fa48ed1d6c65"
+    },
+    {
+      "path": "environment.yml",
+      "sha256": "5d56bf2668fd4520db5883b31191f5810a20f2f64f3acf4f77b3fce647bb077a"
+    },
+    {
+      "path": "examples/README.md",
+      "sha256": "8129c302af7a47e945a124ec1dfae9f5523f5e60b6db8baca96963a69116cdab"
+    },
+    {
+      "path": "examples/fttt_demo.py",
+      "sha256": "68a411a30a3f476723cf1b4ca74afb718b5265ecb30bfe72c4e7e154ad296dce"
+    },
+    {
+      "path": "pyproject.toml",
+      "sha256": "c10011c845baaee04731e3f3b1443da54363aaabc0ce96b8a853d97d8ad720ff"
+    },
+    {
+      "path": "src/ftttbench/__init__.py",
+      "sha256": "9ca8f9856a46d3bb205816887c07df063c67c2cf10fc71ed2fc7fc8c6a7eec34"
+    },
+    {
+      "path": "src/ftttbench/__main__.py",
+      "sha256": "307299fda7b77d22c64cb51430ec75e5f59d78e9c948786afb3b2544fe45e4b7"
+    },
+    {
+      "path": "src/ftttbench/_assets/weights/synthetic_ellipses/manifest.json",
+      "sha256": "732ee47f66f7173b8ac8dcd29048dbe6f310653820888eda39570036bf6c080b"
+    },
+    {
+      "path": "src/ftttbench/_assets/weights/synthetic_ellipses/reference.pt",
+      "sha256": "5f86fa62c41525d0879ee7c7ddd0b0b25d70707026f031ed6d2f4ce80814cf72"
+    },
+    {
+      "path": "src/ftttbench/_assets/weights/synthetic_ellipses/reference.pt.json",
+      "sha256": "e8b72a87452bb67f2e839d37642212e7cd037af8414e7196c65bbdebfc9c4b6d"
+    },
+    {
+      "path": "src/ftttbench/algorithms/__init__.py",
+      "sha256": "b9f00fb78a11c6ddb795bc5cc901a454179665f2bd4b9fa17a54bf8715e24daa"
+    },
+    {
+      "path": "src/ftttbench/algorithms/_control.py",
+      "sha256": "44128d985795acaade4f6a4b6dbaa39773c3803346a3a08f244ab646543745a4"
+    },
+    {
+      "path": "src/ftttbench/algorithms/fttt/__init__.py",
+      "sha256": "00e943b26972aacb3517cb0c57e2c37f182ff3c0f31e394dfc63710c0134a003"
+    },
+    {
+      "path": "src/ftttbench/algorithms/fttt/adapter.py",
+      "sha256": "e1dc034f4aa99c27caedce3eb1036968834e0524240e0138359e7f3ad21a0621"
+    },
+    {
+      "path": "src/ftttbench/algorithms/fttt/algorithm.py",
+      "sha256": "d603231261985a9a54cd6aebd0c1841d0df0b814a3741fbe50ed7ca2988952b2"
+    },
+    {
+      "path": "src/ftttbench/algorithms/fttt/parameters.py",
+      "sha256": "905082d3b383b3ca882aa6cb8f58909164f60acf43d4ae974077736a442f9362"
+    },
+    {
+      "path": "src/ftttbench/algorithms/fttt/prior.py",
+      "sha256": "4983b7be0e309223df1b3fda3b7252bc3b2daddbc5847e840365ee98df94ee0c"
+    },
+    {
+      "path": "src/ftttbench/algorithms/fttt/train_prior.py",
+      "sha256": "6a79b1bfcf369ac96a22af86817ef5af6d0e9588a34914a4142d76d77286aa7c"
+    },
+    {
+      "path": "src/ftttbench/algorithms/fttt/weight_bank.py",
+      "sha256": "a245b4ab884d6c0f5dde2a414ad9fa97d0be859a31bec89400b867ce4277d866"
+    },
+    {
+      "path": "src/ftttbench/algorithms/parameters.py",
+      "sha256": "81706f9c996c96c7c193622094e6d0e51d82380e5261102271dacb9aca193bff"
+    },
+    {
+      "path": "src/ftttbench/algorithms/ray.py",
+      "sha256": "945251ec5b47a4676e45333c0550d6aa372f6e50ff8514c497e44bf6e6ba2b93"
+    },
+    {
+      "path": "src/ftttbench/benchmark/__init__.py",
+      "sha256": "b9f00fb78a11c6ddb795bc5cc901a454179665f2bd4b9fa17a54bf8715e24daa"
+    },
+    {
+      "path": "src/ftttbench/benchmark/artifacts.py",
+      "sha256": "4ee3bbc3c0890a38df87c50873f4098cbafe79250f18fbf84565b6cd22590740"
+    },
+    {
+      "path": "src/ftttbench/benchmark/report.py",
+      "sha256": "8160bb7abec2b408e6438369d9582a11e871009193950814463c087dc0bacda1"
+    },
+    {
+      "path": "src/ftttbench/benchmark/runner.py",
+      "sha256": "e98d9cb41641dfcc91a5c6860e4f948c2239177bd4ae5903bd3f8d61e2d2f17b"
+    },
+    {
+      "path": "src/ftttbench/cli.py",
+      "sha256": "4585f9d4746e0b93e2330532501bf7747a5bb3beeb2d271693d6de70672eab94"
+    },
+    {
+      "path": "src/ftttbench/core/__init__.py",
+      "sha256": "b9f00fb78a11c6ddb795bc5cc901a454179665f2bd4b9fa17a54bf8715e24daa"
+    },
+    {
+      "path": "src/ftttbench/core/algorithm_specs.py",
+      "sha256": "031de00f74362e80f962d4e9913b63ddbf37ef797d0329cb4be7e1b6f04b1bc5"
+    },
+    {
+      "path": "src/ftttbench/core/config.py",
+      "sha256": "875fc4b5f4db50ac3e59140334730855acff3879be87b3e563b1542ca3f98f9b"
+    },
+    {
+      "path": "src/ftttbench/core/execution.py",
+      "sha256": "69879ad6a2737c91466a02963da38bca8e8b842ff1c0324cd137644b7e68a84c"
+    },
+    {
+      "path": "src/ftttbench/core/io.py",
+      "sha256": "3328816b229b352c0a51809ba3b8516f759487dc5fed8b1e6610b4095ba39ca3"
+    },
+    {
+      "path": "src/ftttbench/core/provenance.py",
+      "sha256": "dfc310ab3a6c5499fe57899fb9a1cdf9708dde20dd8441c906aa003bd9c561a9"
+    },
+    {
+      "path": "src/ftttbench/core/registry.py",
+      "sha256": "6ad9b16d7ccbe6258f612f2508426627b00e2960514c49ed142d5023c1082665"
+    },
+    {
+      "path": "src/ftttbench/core/run_controls.py",
+      "sha256": "e29cff747eaed38950e20fccffefad5984bd62db631ddcc9d9931f7eba3430ee"
+    },
+    {
+      "path": "src/ftttbench/core/schema.py",
+      "sha256": "c3bdeca39018c55fc6858086f20e8d89452a33d450f9340b773ac298b0edbcdc"
+    },
+    {
+      "path": "src/ftttbench/core/stopping.py",
+      "sha256": "a41ab3b9ca04706324c67d4415bc816be0da2ac83cfde928c4092e841d0ab31e"
+    },
+    {
+      "path": "src/ftttbench/data/__init__.py",
+      "sha256": "b9f00fb78a11c6ddb795bc5cc901a454179665f2bd4b9fa17a54bf8715e24daa"
+    },
+    {
+      "path": "src/ftttbench/data/synthetic.py",
+      "sha256": "4d9c52d2cc5b6f9857adbc20ea3fbd53cbae50e5786e44d6b3826969993a59bf"
+    },
+    {
+      "path": "src/ftttbench/evaluation/__init__.py",
+      "sha256": "b9f00fb78a11c6ddb795bc5cc901a454179665f2bd4b9fa17a54bf8715e24daa"
+    },
+    {
+      "path": "src/ftttbench/evaluation/data.py",
+      "sha256": "768d58c583114874cb2ce818dbfb5cab3ff1528333d645285af1c94f06ba1b27"
+    },
+    {
+      "path": "src/ftttbench/metrics.py",
+      "sha256": "f0ff152d95084d204344e1aa4daa24ed3b41169c281029b0e9028f917516de2d"
+    },
+    {
+      "path": "src/ftttbench/models/__init__.py",
+      "sha256": "3ed387d3359b2c2a7a9501be5e778bef5b6005268f56ab4d772e53a5120fbf89"
+    },
+    {
+      "path": "src/ftttbench/models/siren.py",
+      "sha256": "c1d4756171ffcc7308c4ae1a8d74bc2c3885585807f7862c6a69753e4ed999fd"
+    },
+    {
+      "path": "src/ftttbench/models/skip_unet.py",
+      "sha256": "e623a809e01d4f82fd5a3eb16e1bb008bb5c43ccd0064fa628d641f922c13b87"
+    },
+    {
+      "path": "src/ftttbench/models/tiny_unet.py",
+      "sha256": "fb4e27d66695a4540b6cf8b69ff9deb358bd97cf4b3daa07267260a87cc86ba2"
+    },
+    {
+      "path": "src/ftttbench/operators/__init__.py",
+      "sha256": "07d7c9f817f341a45e98215956e3c5dad4b30d57877ea063c4e68f4a1303bbe9"
+    },
+    {
+      "path": "src/ftttbench/operators/_marching.py",
+      "sha256": "24daefbd7756046363deb29c9fbe5a87db094f81f0f165217bdb360cd3395fc3"
+    },
+    {
+      "path": "src/ftttbench/operators/base.py",
+      "sha256": "5102724d632fa260765618ce84b5df17826ff4101f46fe350a23ee73647a3b9b"
+    },
+    {
+      "path": "src/ftttbench/operators/eikonal.py",
+      "sha256": "d1262408b05215f35b7d6ea5d1a3279f787e3c81aea0f6460ded6dcddc0e5caf"
+    },
+    {
+      "path": "src/ftttbench/operators/noise.py",
+      "sha256": "d3b65d6746f968ede414bd55be0273664ab349244318841b2204331691499e79"
+    },
+    {
+      "path": "src/ftttbench/operators/numpy_base.py",
+      "sha256": "5e34fc7cd453b5ec5f27deeec1fe6b8190d5fcaee2b8089f03f5a639eb9cca38"
+    },
+    {
+      "path": "src/ftttbench/operators/torch_eikonal.py",
+      "sha256": "d10e55a744ba99066c2adf15c135ab95672d0a466751a48aff19cf3f12909ad0"
+    },
+    {
+      "path": "src/ftttbench/solvers/__init__.py",
+      "sha256": "198f14c33438dcfcb950a15ea3be0e801d99ac4da6a019426bcae558f0952e81"
+    },
+    {
+      "path": "src/ftttbench/solvers/base.py",
+      "sha256": "e6c6f66ccfb46513db5052d7f5618d8cde5b725a4c81e7d6f3c674a542c8ea0e"
+    },
+    {
+      "path": "src/ftttbench/solvers/diffusion/__init__.py",
+      "sha256": "eca20a13a2ac1824280d9245da4628a332184c54a8e8ee7bd9dfb116e8a801a3"
+    },
+    {
+      "path": "src/ftttbench/solvers/diffusion/conditioning.py",
+      "sha256": "c834f857cba69b0335b1cba1c490415d911aa1d667aaa67d912b18bf1e2865d7"
+    },
+    {
+      "path": "src/ftttbench/solvers/diffusion/dps.py",
+      "sha256": "32d694107e87532cccc5c1818ed9ebc4a8725bed492c9539fe7b992d1cdc95f4"
+    },
+    {
+      "path": "src/ftttbench/solvers/diffusion/scheduler.py",
+      "sha256": "b8e02bee02d569ead548ca2792199e256826b91fb9ff3a6fe8dd4ae8ad11e49a"
+    },
+    {
+      "path": "src/ftttbench/solvers/dip.py",
+      "sha256": "bbb6f7765fb8df18af27b38b1e6bb602ef4bde01e38851f5f5b6d83af5270ecd"
+    },
+    {
+      "path": "src/ftttbench/solvers/inr.py",
+      "sha256": "bf0085c6f0ddcb15cb0f73ba52fb604732779c8c59f695b96a789b3e73029bfe"
+    },
+    {
+      "path": "src/ftttbench/viz.py",
+      "sha256": "f99c3dd13d16a695b624583f8833e3e94fdaad006f7785c5785610ac751ed328"
+    },
+    {
+      "path": "tests/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "tests/algorithms/test_fttt.py",
+      "sha256": "697ae5c0812714018b8016726c59b3ee621b127d715ea044758df42bff4f8736"
+    },
+    {
+      "path": "tests/algorithms/test_fttt_weight_bank.py",
+      "sha256": "d853467cf3455f265a024a03b6f6a044d8b20dc6686961d9ae21b73ecc9347db"
+    },
+    {
+      "path": "tests/helpers.py",
+      "sha256": "daf4274a287e2aa68223c688cb3661d3c9c65fb711f75feb4c447afaa0e80c43"
+    },
+    {
+      "path": "tests/operators/test_eikonal.py",
+      "sha256": "15ea9cc253432f576e18d340a9190cbc6921baff71ea41dfada2668490659d25"
+    },
+    {
+      "path": "tests/operators/test_torch_eikonal.py",
+      "sha256": "863c67aed92a270e120bf0d1c773250ce4138769988bef77a4e31ea5c362dc19"
+    },
+    {
+      "path": "tests/test_admission_and_metadata.py",
+      "sha256": "5b6b1c84a99b7e164b9f16204e533636b2b2ddb557dc2043c6c9a4594825e96f"
+    },
+    {
+      "path": "tests/test_benchlab_workflow.py",
+      "sha256": "65c2c97ba0d8071a7aa6e3cce6da3e8bc4f8156023141f8f5a5f79bdd62223bd"
+    },
+    {
+      "path": "tests/test_independence.py",
+      "sha256": "f6d7390f4e8bdf676644da7b9ee13a05d60a998660804b6b086d538bef1bac75"
+    }
+  ]
+}
